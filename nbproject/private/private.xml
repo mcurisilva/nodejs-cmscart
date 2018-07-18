@@ -4,13 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/92335667572/projetos/cmscart/app.js</file>
+            <file>file:/home/92335667572/projetos/cmscart/views/admin/edit_product.ejs</file>
             <file>file:/home/92335667572/projetos/cmscart/views/admin/add_product.ejs</file>
+            <file>file:/home/92335667572/projetos/cmscart/routes/admin_pages.js</file>
             <file>file:/home/92335667572/projetos/cmscart/routes/admin_products.js</file>
-            <file>file:/home/92335667572/projetos/cmscart/views/admin/products.ejs</file>
             <file>file:/home/92335667572/projetos/cmscart/routes/admin_categories.js</file>
-            <file>file:/home/92335667572/projetos/cmscart/public/css/style.css</file>
             <file>file:/home/92335667572/projetos/cmscart/models/product.js</file>
-            <file>file:/home/92335667572/projetos/cmscart/public/css/adminstyle.css</file>
+            <file>file:/home/92335667572/projetos/cmscart/routes/pages.js</file>
         </group>
     </open-files>
 </project-private>
