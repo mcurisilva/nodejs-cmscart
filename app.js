@@ -25,6 +25,21 @@ app.set('view engine', 'ejs');
 //Set public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Set global errors variable
+app.locals.erros = null;
+
+//Get page model
+var Page = require('./models/page');
+
+//get all pages to pass to header.ejs
+Page.find({}).sort({sorting: 1}).exec(function(err, pages) {
+    if (err) {
+        console.log(err);
+    } else {
+        app.locals.pages = pages;
+    }
+});
+
 // Express Fileupload middleware
 app.use(fileUpload());
 
