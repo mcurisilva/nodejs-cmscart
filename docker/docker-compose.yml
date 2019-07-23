@@ -1,29 +1,14 @@
 version: "3"
 services:
-  node:
-    image: node:9
-    container_name: nodejs-cmscart
-    user: node
-    working_dir: /home/node/app
-    environment:
-      - NODE_ENV=production
-    volumes:
-      - /home/92335667572/projetos/cmscart:/home/node/app
-    expose:
-      - "8081"
-    command: "npm start"
-    stdin_open: true
-    tty: true
-    depends_on: ["mongo"]
-
   mongo:
     image: mongo
     container_name: mongo-cmscart
     volumes:
-      - /opt/docker/mongodb:/data/db
+      - /home/92335667572/data/mongodb:/data/db
 
   mongo-express:
     image: mongo-express
     container_name: mongo-express-cmscart
     ports: ["8082:8081"]
     depends_on: ["mongo"]
+
