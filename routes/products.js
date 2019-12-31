@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs-extra');
 
+var auth = require('../config/auth');
+var isUser = auth.isUser;
+
 var Product = require('../models/product');
 var Category = require('../models/category');
 
@@ -44,6 +47,8 @@ router.get('/:category/:product', function(req, res) {
 
     var galleryImages = null;
 
+    var loggedIn = (req.isAuthenticated()) ? true : false;
+
     Product.findOne({slug: productSlug}, function(err, p){
         if (err) {
             console.log(err);
@@ -59,7 +64,8 @@ router.get('/:category/:product', function(req, res) {
                     res.render('product',{
                         title: p.title,
                         p: p,
-                        galleryImages: galleryImages
+                        galleryImages: galleryImages,
+                        loggedIn: loggedIn
                     })
                 }
             });
